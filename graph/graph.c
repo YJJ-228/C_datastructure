@@ -102,6 +102,7 @@ LGraph BuildGraph()
         {
             scanf("%d %d %d",&E->V1,&E->V2,&E->Weight);
             InsertEdge(Graph,E);
+            
         }
     }
     //如果顶点有数据的话，读入
