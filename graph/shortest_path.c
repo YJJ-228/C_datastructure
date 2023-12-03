@@ -58,22 +58,21 @@ void InsertEdge(MGraph Graph,Edge E)
 
 MGraph BuildGraph()
 {
+    FILE *fp;
+    fp=fopen("D:/Code/C_class/graph/test2.txt","r");
     MGraph Graph;
     Edge E;
     Vertex V;
     int Nv;
-    printf("读入点的个数:\n");
-    scanf("%d",&Nv);
+    fscanf(fp,"%d",&Nv);
     Graph=CreateGraph(Nv);
-    printf("输入边个数:\n");
-    scanf("%d",&(Graph->Ne));
+    fscanf(fp,"%d",&(Graph->Ne));
     if(Graph->Ne!=0)
     {
         E=(Edge)malloc(sizeof(struct ENode));
-        printf("依次输入边的V1,V2,Weight \n");
         for(int i=0;i<Graph->Ne;i++)
         {
-            scanf("%d %d %d",&E->V1,&E->V2,&E->Weight);
+            fscanf(fp,"%d %d %d",&E->V1,&E->V2,&E->Weight);
             InsertEdge(Graph,E);
         }
     
@@ -83,6 +82,7 @@ MGraph BuildGraph()
     // {
     //     scanf("%c",&(Graph->Data[V]));
     // }
+    fclose(fp);
     }
     return Graph;
 }
