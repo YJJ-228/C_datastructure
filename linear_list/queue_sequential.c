@@ -21,18 +21,18 @@ Queue CreateQueue( int MaxSize )
 }
 
 //确认是否队满
-bool IsFull( Queue Q )
+int IsFull( Queue Q )
 {
     return ((Q->Rear+1)%Q->MaxSize == Q->Front);
 }
 
 //入队
-bool Push(Queue Q, ElementType X)
+int Push(Queue Q, ElementType X)
 {
     if(IsFull(Q)==true)
     {
         printf("队列已满");
-        return false;
+        return 0;
     }
     else
     {
@@ -43,18 +43,18 @@ bool Push(Queue Q, ElementType X)
 }
 
 //确认是否空队
-bool IsEmpty( Queue Q )
+int IsEmpty( Queue Q )
 {
     return (Q->Front == Q->Rear);
 }
 
 //出队
-bool Pop(Queue Q)
+int Pop(Queue Q)
 {
-    if(IsEmpty(Q)==true)
+    if(IsEmpty(Q)==1)
     {
         printf("队列已空");
-        return false;
+        return 0;
     }
     else
     {

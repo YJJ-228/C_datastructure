@@ -1,4 +1,8 @@
-#include "a.h"
+#include <stdio.h>
+#include <stdlib.h>
+#define Maxn 100
+#define Error -1
+
 typedef struct SNode *PtrToSNode;
 typedef int ElementType;
 struct SNode 
@@ -20,7 +24,7 @@ Stack Create_Stack()
 bool Ifempty(Stack S)
 {
     return(S->Next==NULL);
-}
+}d
 
 //入栈
 bool Push(Stack S,ElementType X)
