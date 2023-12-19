@@ -5,7 +5,7 @@
 #define ERROR -1;
 typedef  char  ElementType;
 typedef struct Node *PtrToNode;
-typedef PtrToNode Position;
+typedef PtrToNode Pos	ition;
 
 //建立节点
 struct Node
@@ -33,13 +33,13 @@ Queue CreateQueue( )
 	return Q;
 }
 
-bool IsEmpty( Queue Q )
+int IsEmpty( Queue Q )
 {   
 	return (Q->Front == NULL);  
 }
 
 //入队
-bool AddQueue(Queue Q,ElementType x)
+int AddQueue(Queue Q,ElementType x)
 {	
 	Position p=(PtrToNode)malloc(sizeof(struct Node));
 	p->Data=x;	
@@ -55,7 +55,7 @@ bool AddQueue(Queue Q,ElementType x)
 		Q->Rear=p;	
 	}	
 	Q->MaxSize++;
-	return true;
+	return 1;
 }
 
 //出队

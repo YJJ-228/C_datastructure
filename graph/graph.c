@@ -121,10 +121,6 @@ void DFS(LGraph Graph, Vertex V)
     printf("正在访问第%d个结点\t",V);
     printf("该顶点信息为%c\t邻接点为",Graph->G[V].Data);
     Visited[V]=1;
-    for(PtrToAdjVNode W=Graph->G[V].FirstEdge;W!=NULL;W=W->Next)
-    {
-        printf("%d ",W->AdjV);
-    }
     printf("\n");
     for(PtrToAdjVNode W=Graph->G[V].FirstEdge;W!=NULL;W=W->Next)
     {

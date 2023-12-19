@@ -41,22 +41,22 @@ bool IsFull(Queue Q)
 }
 
 // 在队列中添加节点
-bool AddQ(Queue Q, BinTree T)
+int AddQ(Queue Q, BinTree T)
 {
 	if (IsFull(Q))
 	{
 		printf("队列满");
-		return false;
+		return 0;
 	}
 	else
 	{
 		Q->Rear = (Q->Rear + 1) % Q->MaxSize;
 		Q->data[Q->Rear] = T;
-		return true;
+		return 1;
 	}
 }
 
-bool IsEmpty(Queue Q)
+int IsEmpty(Queue Q)
 {
 	return (Q->Front == Q->Rear);
 }
